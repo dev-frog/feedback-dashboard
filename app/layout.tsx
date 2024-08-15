@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+
+import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
-import { Inter as FontSans } from "next/font/google"
+import PageHeader from "@/components/page-header";
 
+import { Inter as FontSans } from "next/font/google";
 
-import { cn } from "@/lib/utils"
- 
+import { cn } from "@/lib/utils";
+
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
-})
-
-
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,15 +20,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable
+          )}
+        >
+          <PageHeader />
+
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
