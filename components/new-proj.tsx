@@ -11,12 +11,16 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Plus } from "lucide-react";
 
 const NewProjBtn = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Create Project</Button>
+        <Button>
+          <Plus className="w-4 h-4 mr-1" />
+          Create Project
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] rounded-md">
         <DialogHeader>
