@@ -8,6 +8,13 @@
       "when": 1723758598724,
       "tag": "20240815214958_panoramic_salo",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1724544055023,
+      "tag": "20240825000055_real_gravity",
+      "breakpoints": true
     }
   ]
 }

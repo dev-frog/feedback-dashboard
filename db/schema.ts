@@ -5,4 +5,5 @@ export const Project = pgTable("project", {
   name: varchar("name"),
   url: text("url"),
   description: text("description"),
+  userId: varchar("user_id"),
 });
